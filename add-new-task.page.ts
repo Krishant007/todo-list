@@ -9,7 +9,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class AddNewTaskPage implements OnInit {
   categories = ['work', 'personal', 'home']
-
+  
   taskName: string | undefined;
   taskDate: Date | undefined;
   taskPriority: number | undefined;
@@ -20,12 +20,15 @@ export class AddNewTaskPage implements OnInit {
   constructor(public modalCtrl:ModalController) { }
 
   ngOnInit() {
+    this.categories.push( 'work')
+this.categories.push ('personal')
   }
 
   async dismis(){
     await this.modalCtrl.dismiss(this.taskObject)
 
   }
+  
 
   selectedCategory(index:number){
     this.taskCategory = this.categories[index]

@@ -9,31 +9,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class HomePage {
 
-todoList = [{
-itemName : 'Coding',
-itemDueDate: '1-10-21',
-itemPriority: 'high',
-itemCategory: 'Word'
-},
-{
-  itemName : 'Design',
-  itemDueDate: '2-10-21',
-  itemPriority: 'low',
-  itemCategory: 'Word'
-  },
-  {
-    itemName : 'Shopping',
-    itemDueDate: '7-10-21',
-    itemPriority: 'middle',
-    itemCategory: 'Personal'
-    },
-    {
-    itemName : 'Workout',
-    itemDueDate: '5-10-21',
-    itemPriority: 'high',
-    itemCategory: 'Personal'
-  }
-]
+  todoList: { itemName: string; itemDueDate: Date; itemPriority: string; itemCategory: string; }[] = [];
 
 today : number = Date.now()
 
@@ -46,10 +22,13 @@ today : number = Date.now()
 
     modal.onDidDismiss () .then (newTaskObj =>{
       console. log (newTaskObj.data) ;
+      this.todoList.push(newTaskObj.data)
       })
 
     return await modal.present()
   }
-
+delete(index: number){
+  this. todoList. splice (index, 1)
+}
 
 }

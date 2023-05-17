@@ -27,7 +27,7 @@
       <ion-datetime-button datetime="datetime"></ion-datetime-button>
 <ion-modal [keepContentsMounted]="true">
   <ng-template>
-    <ion-datetime id="datetime"></ion-datetime>
+    <ion-datetime id="datetime" [(ngModel)]="taskDate" displayFormat="D MMM YYYY H:mm"></ion-datetime>
   </ng-template>
 </ion-modal>
     </ion-item>
