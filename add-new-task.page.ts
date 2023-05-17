@@ -20,8 +20,7 @@ export class AddNewTaskPage implements OnInit {
   constructor(public modalCtrl:ModalController) { }
 
   ngOnInit() {
-    this.categories.push( 'work')
-this.categories.push ('personal')
+   
   }
 
   async dismis(){
